@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="icon"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <style> @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap'); </style>
+
+    <style>
+        body {
+            background: #f5f6f7;
+            margin: 50px;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .welcome {
+            position:relative;
+            z-index:9;
+            max-width: 800px;
+            margin: 0 auto;
+            background:#ffffff;
+            box-shadow:0 0 40px #cccccc;
+            padding:20px 30px;
+            border-radius:15px;
+        }
+        .cityline{
+            z-index:3;
+            position:fixed;
+            left:0;
+            bottom:100px;
+            right:0;
+            height:100px;
+            background:url(/skyline-v1.svg) no-repeat top center;
+        }
+        .blue-part-of-ukrainian-flag{
+            z-index:3;
+            position:fixed;
+            left:0;
+            bottom:50px;
+            right:0;
+            height:50px;
+            background:#376f9d;
+        }
+        .yellow-part-of-ukrainian-flag{
+            z-index:3;
+            position:fixed;
+            left:0;
+            bottom:0;
+            right:0;
+            height:50px;
+            background:#f2a240;
+        }
+    </style>
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+{% block body %}{% endblock %}
+<div class="cityline"></div>
+<div class="blue-part-of-ukrainian-flag"></div>
+<div class="yellow-part-of-ukrainian-flag"></div>
+</body>
+</html>

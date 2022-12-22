@@ -1,0 +1,8 @@
+Write a class Calculator in PHP that should implement `add` functionality of 2 numbers.
+
+As a user of this class I should be able to make such call "$calculator->add(2, 3)".
+Constructor implementation is of your choice.
+If any of numbers is < 1000 class will calculate in memory.
+If any number is >= 1000 class will calculate via http call to remote server.
+If any number is >= 100000 class will calculate via SOAP call
+Make sure that your Calculator is SOLIDly designed
